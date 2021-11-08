@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "sreejacluster-725a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "sreejacluster-725a"
+  template:
+    metadata:
+      labels:
+        app: "sreejacluster-725a"
+    spec:
+      containers:
+        - name: "sreejacluster-725a"
+          image: "sreejacontainerregistry.azurecr.io/sreejacluster"
+          ports:
+          - containerPort: 80
